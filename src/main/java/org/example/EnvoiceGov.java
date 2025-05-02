@@ -130,10 +130,10 @@ public class EnvoiceGov {
         targetDiv.click();
         // 輸入[帳號]
         WebElement userElement = wait.until(ExpectedConditions.presenceOfElementLocated((By.id("user_id"))));
-        userElement.sendKeys("16312227");
+        userElement.sendKeys("55688");
         // 輸入[密碼]
         WebElement pwdElement = wait.until(ExpectedConditions.presenceOfElementLocated((By.id("user_password"))));
-        pwdElement.sendKeys("Aci16312227");
+        pwdElement.sendKeys("55688");
         // End the session
         System.out.println("wait");
 
