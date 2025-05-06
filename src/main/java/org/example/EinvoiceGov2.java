@@ -16,7 +16,7 @@ import java.io.File;
  *  selenium ver 3.141.59
  */
 
-public class EnvoiceGov2 {
+public class EinvoiceGov2 {
 
     WebDriver driver;
     String loginUrl = "https://www.einvoice.nat.gov.tw/accounts/login";
@@ -24,10 +24,11 @@ public class EnvoiceGov2 {
     String universalId = "";
     String username;
     String password;
+    private static final String LINK ="/html/body/div[1]/div/div/div/div/main/div/div/div/div/table[1]/tbody/tr[1]/td[5]/div/span/a";
 
     public static void main(String[] args) {
 
-        EnvoiceGov2 nat = new EnvoiceGov2("test","test", "test");
+        EinvoiceGov2 nat = new EinvoiceGov2("test","test", "test");
         nat.init();
         nat.execute();
 
@@ -37,7 +38,7 @@ public class EnvoiceGov2 {
 
     }
 
-    public EnvoiceGov2(String universalId, String username, String password) {
+    public EinvoiceGov2(String universalId, String username, String password) {
         this.universalId = universalId;
         this.username = username;
         this.password = password;
@@ -90,7 +91,7 @@ public class EnvoiceGov2 {
 
         //取得 臺北小巨蛋廣場租用資訊_202503 位置
         WebElement targetDiv = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("/html/body/div[1]/div/div/div/div/main/div/div/div/div/table[1]/tbody/tr[1]/td[5]/div/span/a")
+                By.xpath(LINK)
         ));
         // 點選[下載]按鈕
         targetDiv.click();
