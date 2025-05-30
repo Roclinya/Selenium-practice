@@ -25,7 +25,7 @@ public class SeleniumTestService {
     public void performTest() {
         Runnable task = () -> {
             LOG.info("Task is Running , Main Thread: " + Thread.currentThread().getName());
-            WebDriver webDriver = driverFactory.createDriver(); // createDriver 方法直接使用 new ChromeDriver() 創建 WebDriver 實例，完全繞過 Spring 容器管理
+            WebDriver webDriver = driverFactory.createDriver(); // 每次獲取新 WebDriver
             try {
                 webDriver.get("https://data.taipei/dataset/detail?id=bcf11ef9-9855-4ee3-8750-ca3df5aaf6c4");
                 System.out.println("Page title: " + webDriver.getTitle());

@@ -1,4 +1,4 @@
-package selenium.Controller;
+package selenium.controller;
 
 import selenium.jobs.HelloWorldJob;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +10,7 @@ import selenium.quartzService.SchedulerService;
 @RestController
 @RequestMapping("/api/quartz")
 public class QuartzController {
+
     private final SchedulerService schedulerService;
 
     @Autowired
